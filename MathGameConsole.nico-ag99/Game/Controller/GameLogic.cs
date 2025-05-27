@@ -1,10 +1,5 @@
-﻿using Microsoft.VisualBasic.FileIO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Game.View;
+﻿using Game.View;
 using Game.Model;
-using System.Xml.Linq;
 
 namespace Game.Controller
 {
@@ -138,8 +133,8 @@ namespace Game.Controller
         }
         static void Operation(char sign)
         {
-            session.ResetTimer();
-            session.StartTimer();
+            session.stopwatch.Reset();
+            session.stopwatch.Start();
 
             Dictionary<char, string> operationNames = new Dictionary<char, string>
             {
@@ -170,7 +165,7 @@ namespace Game.Controller
                 }
             }
 
-            session.StopTimer();
+            session.stopwatch.Stop();
             ConsoleUI.ShowFinishScoreMessage(session.GetElapsedTime(), session.Score);
 
             if (operationNames.ContainsKey(sign))

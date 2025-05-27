@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-namespace Game.View
+﻿namespace Game.View
 {
     internal class ConsoleUI
     {
